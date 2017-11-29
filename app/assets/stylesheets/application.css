@@ -15,3 +15,10 @@
  */
 
  
+.no-padding{
+	padding: 0px !important;
+}
+
+.break-wall{
+	display: inline-block;
+}

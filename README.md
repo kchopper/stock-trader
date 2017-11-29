@@ -33,8 +33,6 @@ Things you may want to cover:
   * rails g model Model attr1:type attr2:type attr3:type
   
 # List of problems faced during the we tackled them
-  * couldn't find file 'device_bootstrap_views' with type 'text/css'
-  *  removing *=require devise_bootstrap_views from application .css and adding @import "bootstrap-sprockets";
-  * @import "bootstrap"; solved the issue to the end of application.css.scss file solved the problem
+  
 
 # stock-trader
