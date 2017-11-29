@@ -30,6 +30,7 @@ Things you may want to cover:
   * rails g bootstrap:layout application
   * rails g devise:views:locale en
   * rails g devise:views:bootstrap_templates
+  * rails g model Model attr1:type attr2:type attr3:type
   
 # List of problems faced during the we tackled them
   * couldn't find file 'device_bootstrap_views' with type 'text/css'
