@@ -1,3 +1,4 @@
+# user model
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -11,7 +12,7 @@ class User < ApplicationRecord
 
   def full_name
     return "#{first_name} #{last_name}".strip if (first_name || last_name)
-     "Anonymous"
+      "Anonymous"
   end
 
   def stock_already_added?(ticker_symbol)
@@ -26,5 +27,30 @@ class User < ApplicationRecord
 
   def can_add_more_stock(ticker_symbol)
     !stock_already_added?(ticker_symbol) && stock_under_limit?
+  end
+
+  def self.search(params)
+    params.strip!
+    params.downcase!
+    to_send_back = (search_by_first_name(params) + search_by_last_name(params) +
+                    search_by_email(params)).uniq
+    return nil unless to_send_back
+    to_send_back
+  end
+
+  def self.search_by_first_name(params)
+    matches('first_name', params)
+  end
+
+  def self.search_by_last_name(params)
+    matches('last_name', params)
+  end
+
+  def self.search_by_email(params)
+    matches('email', params)
+  end
+
+  def self.matches(field_name, params)
+    User.where("#{field_name} like?", "%#{params}%")
   end
 end

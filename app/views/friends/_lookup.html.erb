@@ -1,0 +1,15 @@
+ <h1 class="text-center">Search friends</h1>
+
+ <%= form_tag search_friends_path,method: :get, id: 'friend-lookup-form', remote: true do %>
+  <div class="form-group no-padding text-center col-md-12">
+    <div class="col-md-10">
+      <%= text_field_tag  :search_param, params[:search_param], placeholder: "Enter Name or Email", autofocus: true, class: "form-control search-box input-lg" %>
+    </div>
+    <div class="col-md-2">
+      <%= button_tag(type: :submit, class: "btn btn-lg btn-info") do %>
+        Search for friends
+      <%end%>
+    </div>
+  </div>
+ <% end %>
+</div>
