@@ -31,6 +31,7 @@ Things you may want to cover:
   * rails g devise:views:locale en
   * rails g devise:views:bootstrap_templates
   * rails g model Model attr1:type attr2:type attr3:type
+  * rails g model Model user:reference stock: reference
   
 # List of problems faced during the we tackled them
   
